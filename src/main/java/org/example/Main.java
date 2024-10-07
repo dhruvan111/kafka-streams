@@ -10,13 +10,16 @@ import org.apache.kafka.streams.kstream.Produced;
 import org.example.data.RTSData;
 import org.example.data.RTSStreamingPacketEvent;
 import org.example.serde.RTSDataSerde;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
 public class Main {
     private static final String INPUT_TOPIC = "input-streamID_001";
     private static final String OUTPUT_TOPIC = "output-streamID_001";
-    private static final long THRESOLD = 4;
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+    private static final long THRESHOLD = 2;
 
     public static Topology buildTopology() {
         StreamsBuilder streamsBuilder = new StreamsBuilder();
@@ -24,6 +27,7 @@ public class Main {
 
         KStream<String, RTSData> transformedStream = sourceStream.map((key, jsonString) -> {
             try {
+                logger.info("Prefix: Extracting data: {}", jsonString);
                 return extractEvent(jsonString);
             } catch (JsonProcessingException e) {
                 throw new RuntimeException("Transformation goes wrong, from String to RTS", e);
@@ -33,6 +37,10 @@ public class Main {
         KStream<String, RTSData> combinedStream = transformedStream
                 .groupByKey()
                 .reduce((packet1, packet2) -> {
+                    logger.info("Prefix: previousPacket: {} & currentPacket: {}",packet1.getEventData().getFirst() , packet2.getEventData().getFirst());
+                    if (packet1.getEventData().size() >= THRESHOLD) {
+                        return packet2;
+                    }
                     packet1.combineEventData(packet2);
                     return packet1;
                 }).toStream();
