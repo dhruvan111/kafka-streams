@@ -1,19 +1,20 @@
 package org.example;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.*;
 import org.apache.kafka.streams.kstream.Consumed;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.Produced;
 import org.example.data.RTSData;
-import org.example.data.RTSStreamingPacketEvent;
+import org.example.processors.ExtractEventProcessor;
 import org.example.serde.RTSDataSerde;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
+
+import static org.example.utils.ExtractFromJson.extractEvent;
 
 public class Main {
     private static final String INPUT_TOPIC = "input-streamID_004";
@@ -40,7 +41,7 @@ public class Main {
                 .reduce((packet1, packet2) -> {
                     double startTime = System.currentTimeMillis();
                     logger.info("currentSize: {} & previousStoredSize: {}", packet2.getEventData().size(), packet1.getEventData().size());
-                    if (packet1.getEventData().size() >= THRESHOLD) {
+                    if (packet1.getEventData().size() >= 2) {
                         return packet2;
                     }
                     packet1.combineEventData(packet2);
@@ -63,14 +64,13 @@ public class Main {
         return streamsBuilder.build();
     }
 
-    private static KeyValue<String, RTSData> extractEvent(String jsonString) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        RTSStreamingPacketEvent event = mapper.readValue(jsonString, RTSStreamingPacketEvent.class);
-        String streamId = event.getStreamId();  // Key
+    private Topology createTopology() {
+        Topology topology = new Topology();
+        topology.addSource("Source", INPUT_TOPIC)
+                .addProcessor("EXTRACTION", ExtractEventProcessor::new);
+        // TODO
 
-        RTSData data = new RTSData();
-        data.setEventData(event.getEvents());   // Event data
-        return KeyValue.pair(streamId, data);
+        return topology;
     }
 
     private static Properties getProperties() {
@@ -79,6 +79,7 @@ public class Main {
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, RTSDataSerde.class.getName());
+        props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1);
         return props;
     }
 
