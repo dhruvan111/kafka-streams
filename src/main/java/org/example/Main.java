@@ -6,30 +6,34 @@ import org.apache.kafka.streams.*;
 import org.apache.kafka.streams.kstream.Consumed;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.Produced;
+import org.apache.kafka.streams.state.KeyValueStore;
+import org.apache.kafka.streams.state.StoreBuilder;
+import org.apache.kafka.streams.state.Stores;
 import org.example.data.RTSData;
+import org.example.processors.AppendDataProcessor;
 import org.example.processors.ExtractEventProcessor;
+import org.example.processors.RTSDataSerializerProcessor;
 import org.example.serde.RTSDataSerde;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Properties;
-
-import static org.example.utils.ExtractFromJson.extractEvent;
+import static org.example.config.ConfigProperties.getPropertiesForProcessors;
+import static org.example.utils.JsonDataUtils.fromJson;
 
 public class Main {
-    private static final String INPUT_TOPIC = "input-streamID_004";
-    private static final String OUTPUT_TOPIC = "output-streamID_004";
+    private static final String INPUT_TOPIC = "input-streamID_005";
+    private static final String OUTPUT_TOPIC = "output-streamID_005";
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     private static final long THRESHOLD = 2;
 
-    public static Topology buildTopology() {
+    private static Topology buildTopology() {
         StreamsBuilder streamsBuilder = new StreamsBuilder();
         KStream<String, String> sourceStream = streamsBuilder.stream(INPUT_TOPIC, Consumed.with(Serdes.String(), Serdes.String()));
 
         KStream<String, RTSData> transformedStream = sourceStream.map((key, jsonString) -> {
             try {
                 logger.info("Prefix: Extracting data: {}", jsonString);
-                return extractEvent(jsonString);
+                return fromJson(jsonString);
             } catch (JsonProcessingException e) {
                 logger.error("JSON converting error conversion: {}", jsonString);
                 return KeyValue.pair("ERROR", new RTSData());
@@ -64,27 +68,28 @@ public class Main {
         return streamsBuilder.build();
     }
 
-    private Topology createTopology() {
-        Topology topology = new Topology();
-        topology.addSource("Source", INPUT_TOPIC)
-                .addProcessor("EXTRACTION", ExtractEventProcessor::new);
-        // TODO
 
+    private static StoreBuilder<KeyValueStore<String, RTSData>> buildStore() {
+        return Stores.keyValueStoreBuilder(
+                Stores.persistentKeyValueStore("data-store"),
+                Serdes.String(),
+                new RTSDataSerde()
+        );
+    }
+
+    private static Topology createTopology() {
+        Topology topology = new Topology();
+        topology.addSource("SOURCE", INPUT_TOPIC)
+                .addProcessor("EXTRACTION", ExtractEventProcessor::new, "SOURCE")
+                .addProcessor("APPEND", AppendDataProcessor::new, "EXTRACTION")
+                .addStateStore(buildStore(), "APPEND")
+                .addProcessor("SER", RTSDataSerializerProcessor::new, "APPEND")
+                .addSink("Sink", OUTPUT_TOPIC, "SER");
         return topology;
     }
 
-    private static Properties getProperties() {
-        Properties props = new Properties();
-        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "rts-stream-topology");
-        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
-        props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, RTSDataSerde.class.getName());
-        props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 1);
-        return props;
-    }
-
     public static void main(String[] args) {
-        KafkaStreams kafkaStreams = new KafkaStreams(buildTopology(), getProperties());
+        KafkaStreams kafkaStreams = new KafkaStreams(createTopology(), getPropertiesForProcessors());
         kafkaStreams.start();
         Runtime.getRuntime().addShutdownHook(new Thread(kafkaStreams::close));
     }
