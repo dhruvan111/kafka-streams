@@ -16,8 +16,8 @@ import org.slf4j.LoggerFactory;
 import java.util.Properties;
 
 public class Main {
-    private static final String INPUT_TOPIC = "input-streamID_002";
-    private static final String OUTPUT_TOPIC = "output-streamID_002";
+    private static final String INPUT_TOPIC = "input-streamID_004";
+    private static final String OUTPUT_TOPIC = "output-streamID_004";
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     private static final long THRESHOLD = 2;
 
@@ -30,23 +30,34 @@ public class Main {
                 logger.info("Prefix: Extracting data: {}", jsonString);
                 return extractEvent(jsonString);
             } catch (JsonProcessingException e) {
-                throw new RuntimeException("Transformation goes wrong, from String to RTS", e);
+                logger.error("JSON converting error conversion: {}", jsonString);
+                return KeyValue.pair("ERROR", new RTSData());
             }
         });
 
-        KStream<String, RTSData> combinedStream = transformedStream
+        KStream<String, RTSData> filteredStream = transformedStream
                 .groupByKey()
                 .reduce((packet1, packet2) -> {
-                    logger.info("Prefix: previousPacket: {} & currentPacket: {}",packet1.getEventData().getFirst() , packet2.getEventData().getFirst());
+                    double startTime = System.currentTimeMillis();
+                    logger.info("currentSize: {} & previousStoredSize: {}", packet2.getEventData().size(), packet1.getEventData().size());
                     if (packet1.getEventData().size() >= THRESHOLD) {
                         return packet2;
                     }
                     packet1.combineEventData(packet2);
+                    double endTime = System.currentTimeMillis();
+                    logger.info("Time taken to append: {}", (endTime - startTime));
                     return packet1;
+                }).filter((key, value) -> {
+                    double startTime = System.currentTimeMillis();
+                    logger.info("Key: {}", key);
+                    logger.info("ValueSize: {}", value.getEventData().size());
+                    for (String event : value.getEventData()) {
+                        logger.info("Data: {}", event);
+                    }
+                    double endTime = System.currentTimeMillis();
+                    logger.info("Time taken to filter: {}", (endTime - startTime));
+                    return value.getEventData().size() >= THRESHOLD;
                 }).toStream();
-
-        KStream<String, RTSData> filteredStream = combinedStream
-                .filter((key, value) -> value.getEventData().size() >= THRESHOLD);
 
         filteredStream.to(OUTPUT_TOPIC, Produced.with(Serdes.String(), new RTSDataSerde()));
         return streamsBuilder.build();
