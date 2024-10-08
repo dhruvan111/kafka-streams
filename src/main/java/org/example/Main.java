@@ -16,8 +16,8 @@ import org.slf4j.LoggerFactory;
 import java.util.Properties;
 
 public class Main {
-    private static final String INPUT_TOPIC = "input-streamID_001";
-    private static final String OUTPUT_TOPIC = "output-streamID_001";
+    private static final String INPUT_TOPIC = "input-streamID_002";
+    private static final String OUTPUT_TOPIC = "output-streamID_002";
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     private static final long THRESHOLD = 2;
 
@@ -45,7 +45,10 @@ public class Main {
                     return packet1;
                 }).toStream();
 
-        combinedStream.to(OUTPUT_TOPIC, Produced.with(Serdes.String(), new RTSDataSerde()));
+        KStream<String, RTSData> filteredStream = combinedStream
+                .filter((key, value) -> value.getEventData().size() >= THRESHOLD);
+
+        filteredStream.to(OUTPUT_TOPIC, Produced.with(Serdes.String(), new RTSDataSerde()));
         return streamsBuilder.build();
     }
 
