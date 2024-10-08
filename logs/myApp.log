@@ -1,0 +1,1157 @@
+2024-10-08 23:13:13 [main] INFO  o.apache.kafka.streams.StreamsConfig - StreamsConfig values: 
+	acceptable.recovery.lag = 10000
+	application.id = rts-stream-processor-topology
+	application.server = 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [localhost:9092]
+	buffered.records.per.partition = 1000
+	built.in.metrics.version = latest
+	cache.max.bytes.buffering = 10485760
+	client.id = 
+	commit.interval.ms = 1
+	connections.max.idle.ms = 540000
+	default.client.supplier = class org.apache.kafka.streams.processor.internals.DefaultKafkaClientSupplier
+	default.deserialization.exception.handler = class org.apache.kafka.streams.errors.LogAndFailExceptionHandler
+	default.dsl.store = rocksDB
+	default.key.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	default.list.key.serde.inner = null
+	default.list.key.serde.type = null
+	default.list.value.serde.inner = null
+	default.list.value.serde.type = null
+	default.production.exception.handler = class org.apache.kafka.streams.errors.DefaultProductionExceptionHandler
+	default.timestamp.extractor = class org.apache.kafka.streams.processor.FailOnInvalidTimestamp
+	default.value.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	dsl.store.suppliers.class = class org.apache.kafka.streams.state.BuiltInDslStoreSuppliers$RocksDBDslStoreSuppliers
+	enable.metrics.push = true
+	max.task.idle.ms = 0
+	max.warmup.replicas = 2
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	num.standby.replicas = 0
+	num.stream.threads = 1
+	poll.ms = 100
+	probing.rebalance.interval.ms = 600000
+	processing.guarantee = at_least_once
+	rack.aware.assignment.non_overlap_cost = null
+	rack.aware.assignment.strategy = none
+	rack.aware.assignment.tags = []
+	rack.aware.assignment.traffic_cost = null
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	repartition.purge.interval.ms = 30000
+	replication.factor = -1
+	request.timeout.ms = 40000
+	retries = 0
+	retry.backoff.ms = 100
+	rocksdb.config.setter = null
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	state.cleanup.delay.ms = 600000
+	state.dir = /var/folders/qn/6z6q0ts15jx37pvlsbjr81qr0000gp/T//kafka-streams
+	statestore.cache.max.bytes = 10485760
+	task.timeout.ms = 300000
+	topology.optimization = none
+	upgrade.from = null
+	window.size.ms = null
+	windowed.inner.class.serde = null
+	windowstore.changelog.additional.retention.ms = 86400000
+
+2024-10-08 23:13:13 [main] WARN  o.a.k.s.p.internals.StateDirectory - Using an OS temp directory in the state.dir property can cause failures with writing the checkpoint file due to the fact that this directory can be cleared by the OS. Resolved state.dir: [/var/folders/qn/6z6q0ts15jx37pvlsbjr81qr0000gp/T//kafka-streams]
+2024-10-08 23:13:13 [main] INFO  o.a.k.s.p.internals.StateDirectory - Reading UUID from process file: 82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7
+2024-10-08 23:13:14 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1728409394097
+2024-10-08 23:13:14 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Kafka Streams version: 3.7.1
+2024-10-08 23:13:14 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Kafka Streams commit ID: e2494e6ffb89f828
+2024-10-08 23:13:14 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Creating restore consumer client
+2024-10-08 23:13:14 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = none
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2024-10-08 23:13:14 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1728409394145
+2024-10-08 23:13:14 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Creating thread producer client
+2024-10-08 23:13:14 [main] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2024-10-08 23:13:14 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2024-10-08 23:13:14 [main] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] Instantiated an idempotent producer.
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1728409394164
+2024-10-08 23:13:14 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Creating consumer client
+2024-10-08 23:13:14 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = rts-stream-processor-topology
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2024-10-08 23:13:14 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2024-10-08 23:13:14 [main] INFO  o.a.k.s.p.i.a.AssignorConfiguration - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Cooperative rebalancing protocol is enabled now
+2024-10-08 23:13:14 [main] INFO  o.a.k.c.consumer.ConsumerConfig - These configurations '[replication.factor, probing.rebalance.interval.ms, max.warmup.replicas, acceptable.recovery.lag, rack.aware.assignment.non_overlap_cost, application.server, rack.aware.assignment.strategy, rack.aware.assignment.traffic_cost, windowstore.changelog.additional.retention.ms, num.standby.replicas, upgrade.from, rack.aware.assignment.tags, application.id]' were supplied but are not used yet.
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-10-08 23:13:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1728409394203
+2024-10-08 23:13:14 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] State transition from CREATED to REBALANCING
+2024-10-08 23:13:14 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Started 1 stream threads
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Starting
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] State transition from CREATED to STARTING
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Subscribed to topic(s): input-streamID_005
+2024-10-08 23:13:14 [kafka-producer-network-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] Cluster ID: wZiqM8mHTE2wey8CnwC7VQ
+2024-10-08 23:13:14 [kafka-producer-network-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] ProducerId set to 7009 with epoch 0
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Cluster ID: wZiqM8mHTE2wey8CnwC7VQ
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Discovered group coordinator 192.168.1.3:9092 (id: 2147483647 rack: null)
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] (Re-)joining group
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Request joining group due to: need to re-join with the given member-id: rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-cfac9010-17c7-45de-bbb2-8b9176d0a407
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] (Re-)joining group
+2024-10-08 23:13:14 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Processed 0 total records, ran 0 punctuators, and committed 0 total tasks since the last update
+2024-10-08 23:13:17 [kafka-producer-network-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 28831 ms.
+2024-10-08 23:13:21 [rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-consumer, groupId=rts-stream-topology] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 30000 ms.
+2024-10-08 23:13:35 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 28409 ms.
+2024-10-08 23:13:35 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: fetchMetadata
+2024-10-08 23:13:42 [Thread-0] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] State transition from REBALANCING to PENDING_SHUTDOWN
+2024-10-08 23:13:42 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Informed to shut down
+2024-10-08 23:13:42 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] State transition from STARTING to PENDING_SHUTDOWN
+2024-10-08 23:13:42 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Shutting down 1 stream threads
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Successfully joined group with generation Generation{generationId=8, memberId='rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-cfac9010-17c7-45de-bbb2-8b9176d0a407', protocol='stream'}
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.RepartitionTopics - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Skipping the repartition topic validation since there are no repartition topics.
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] 1 client nodes and Optional[1] consumers participating in this rebalance: 
+82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7: [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-cfac9010-17c7-45de-bbb2-8b9176d0a407].
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Assigning stateful tasks: [0_0]
+and stateless tasks: []
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.a.HighAvailabilityTaskAssignor - Decided on assignment: {82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7=[activeTasks: ([0_0]) standbyTasks: ([]) prevActiveTasks: ([]) prevStandbyTasks: ([0_0]) changelogOffsetTotalsByTask: ([0_0=245]) taskLagTotals: ([0_0=1]) clientTags: ([]) capacity: 1 assigned: 1]} with no followup probing rebalance.
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Assigned 1 total tasks including 1 stateful tasks to 1 client nodes.
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Assignment of tasks to nodes: 82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7=[activeTasks: ([0_0]) standbyTasks: ([])]
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Client 82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7 per-consumer assignment:
+	prev owned active {}
+	prev owned standby {rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-cfac9010-17c7-45de-bbb2-8b9176d0a407=[0_0]}
+	assigned active {rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-cfac9010-17c7-45de-bbb2-8b9176d0a407=[0_0]}
+	revoking active {}
+	assigned standby {}
+
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Finished stable assignment of tasks, no followup rebalances required.
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Finished assignment for group at generation 8: {rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-cfac9010-17c7-45de-bbb2-8b9176d0a407=Assignment(partitions=[input-streamID_005-0], userDataSize=52)}
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Successfully synced group in generation Generation{generationId=8, memberId='rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-cfac9010-17c7-45de-bbb2-8b9176d0a407', protocol='stream'}
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Updating assignment with
+	Assigned partitions:                       [input-streamID_005-0]
+	Current owned partitions:                  []
+	Added partitions (assigned - owned):       [input-streamID_005-0]
+	Revoked partitions (owned - assigned):     []
+
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Notifying assignor about the new Assignment(partitions=[input-streamID_005-0], userDataSize=52)
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] No followup rebalance was requested, resetting the rebalance schedule.
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.TaskManager - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Handle new assignment with:
+	New active tasks: [0_0]
+	New standby tasks: []
+	Existing active tasks: []
+	Existing standby tasks: []
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Adding newly assigned partitions: input-streamID_005-0
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Shutting down clean
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] task [0_0] Suspended from CREATED
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.RecordCollectorImpl - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] stream-task [0_0] Closing record collector clean
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] task [0_0] Closed clean
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer unregistered
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.TaskManager - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Shutdown complete
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer unregistered
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer unregistered
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] State transition from PENDING_SHUTDOWN to DEAD
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Shutdown complete
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Shutdown 1 stream threads complete
+2024-10-08 23:13:44 [kafka-admin-client-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin unregistered
+2024-10-08 23:13:44 [kafka-admin-client-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:13:44 [kafka-admin-client-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:13:44 [kafka-admin-client-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:13:44 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] State transition from PENDING_SHUTDOWN to NOT_RUNNING
+2024-10-08 23:13:44 [Thread-0] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Streams client stopped completely
+2024-10-08 23:13:45 [kafka-producer-network-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 27169 ms.
+2024-10-08 23:13:46 [main] INFO  o.apache.kafka.streams.StreamsConfig - StreamsConfig values: 
+	acceptable.recovery.lag = 10000
+	application.id = rts-stream-processor-topology
+	application.server = 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [localhost:9092]
+	buffered.records.per.partition = 1000
+	built.in.metrics.version = latest
+	cache.max.bytes.buffering = 10485760
+	client.id = 
+	commit.interval.ms = 1
+	connections.max.idle.ms = 540000
+	default.client.supplier = class org.apache.kafka.streams.processor.internals.DefaultKafkaClientSupplier
+	default.deserialization.exception.handler = class org.apache.kafka.streams.errors.LogAndFailExceptionHandler
+	default.dsl.store = rocksDB
+	default.key.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	default.list.key.serde.inner = null
+	default.list.key.serde.type = null
+	default.list.value.serde.inner = null
+	default.list.value.serde.type = null
+	default.production.exception.handler = class org.apache.kafka.streams.errors.DefaultProductionExceptionHandler
+	default.timestamp.extractor = class org.apache.kafka.streams.processor.FailOnInvalidTimestamp
+	default.value.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	dsl.store.suppliers.class = class org.apache.kafka.streams.state.BuiltInDslStoreSuppliers$RocksDBDslStoreSuppliers
+	enable.metrics.push = true
+	max.task.idle.ms = 0
+	max.warmup.replicas = 2
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	num.standby.replicas = 0
+	num.stream.threads = 1
+	poll.ms = 100
+	probing.rebalance.interval.ms = 600000
+	processing.guarantee = at_least_once
+	rack.aware.assignment.non_overlap_cost = null
+	rack.aware.assignment.strategy = none
+	rack.aware.assignment.tags = []
+	rack.aware.assignment.traffic_cost = null
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	repartition.purge.interval.ms = 30000
+	replication.factor = -1
+	request.timeout.ms = 40000
+	retries = 0
+	retry.backoff.ms = 100
+	rocksdb.config.setter = null
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	state.cleanup.delay.ms = 600000
+	state.dir = /var/folders/qn/6z6q0ts15jx37pvlsbjr81qr0000gp/T//kafka-streams
+	statestore.cache.max.bytes = 10485760
+	task.timeout.ms = 300000
+	topology.optimization = none
+	upgrade.from = null
+	window.size.ms = null
+	windowed.inner.class.serde = null
+	windowstore.changelog.additional.retention.ms = 86400000
+
+2024-10-08 23:13:46 [main] WARN  o.a.k.s.p.internals.StateDirectory - Using an OS temp directory in the state.dir property can cause failures with writing the checkpoint file due to the fact that this directory can be cleared by the OS. Resolved state.dir: [/var/folders/qn/6z6q0ts15jx37pvlsbjr81qr0000gp/T//kafka-streams]
+2024-10-08 23:13:46 [main] INFO  o.a.k.s.p.internals.StateDirectory - Reading UUID from process file: 82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7
+2024-10-08 23:13:46 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1728409426724
+2024-10-08 23:13:46 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Kafka Streams version: 3.7.1
+2024-10-08 23:13:46 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Kafka Streams commit ID: e2494e6ffb89f828
+2024-10-08 23:13:46 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Creating restore consumer client
+2024-10-08 23:13:46 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = none
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2024-10-08 23:13:46 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1728409426769
+2024-10-08 23:13:46 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Creating thread producer client
+2024-10-08 23:13:46 [main] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2024-10-08 23:13:46 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2024-10-08 23:13:46 [main] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] Instantiated an idempotent producer.
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1728409426788
+2024-10-08 23:13:46 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Creating consumer client
+2024-10-08 23:13:46 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = rts-stream-processor-topology
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2024-10-08 23:13:46 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2024-10-08 23:13:46 [main] INFO  o.a.k.s.p.i.a.AssignorConfiguration - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Cooperative rebalancing protocol is enabled now
+2024-10-08 23:13:46 [main] INFO  o.a.k.c.consumer.ConsumerConfig - These configurations '[replication.factor, probing.rebalance.interval.ms, max.warmup.replicas, acceptable.recovery.lag, rack.aware.assignment.non_overlap_cost, application.server, rack.aware.assignment.strategy, rack.aware.assignment.traffic_cost, windowstore.changelog.additional.retention.ms, num.standby.replicas, upgrade.from, rack.aware.assignment.tags, application.id]' were supplied but are not used yet.
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2024-10-08 23:13:46 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1728409426830
+2024-10-08 23:13:46 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] State transition from CREATED to REBALANCING
+2024-10-08 23:13:46 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Started 1 stream threads
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Starting
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] State transition from CREATED to STARTING
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Subscribed to topic(s): input-streamID_005
+2024-10-08 23:13:46 [kafka-producer-network-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] Cluster ID: wZiqM8mHTE2wey8CnwC7VQ
+2024-10-08 23:13:46 [kafka-producer-network-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] ProducerId set to 7010 with epoch 0
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Cluster ID: wZiqM8mHTE2wey8CnwC7VQ
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Discovered group coordinator 192.168.1.3:9092 (id: 2147483647 rack: null)
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] (Re-)joining group
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Request joining group due to: need to re-join with the given member-id: rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-a5b54e8b-c9f9-4f44-9b49-30793f697907
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] (Re-)joining group
+2024-10-08 23:13:46 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Processed 0 total records, ran 0 punctuators, and committed 0 total tasks since the last update
+2024-10-08 23:13:52 [rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-consumer, groupId=rts-stream-topology] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 30000 ms.
+2024-10-08 23:14:01 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 24875 ms.
+2024-10-08 23:14:05 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
+2024-10-08 23:14:14 [kafka-producer-network-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 27272 ms.
+2024-10-08 23:14:23 [rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-consumer, groupId=rts-stream-topology] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 30000 ms.
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Successfully joined group with generation Generation{generationId=9, memberId='rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-a5b54e8b-c9f9-4f44-9b49-30793f697907', protocol='stream'}
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.RepartitionTopics - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Skipping the repartition topic validation since there are no repartition topics.
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] 1 client nodes and Optional[1] consumers participating in this rebalance: 
+82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7: [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-a5b54e8b-c9f9-4f44-9b49-30793f697907].
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Assigning stateful tasks: [0_0]
+and stateless tasks: []
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.a.HighAvailabilityTaskAssignor - Decided on assignment: {82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7=[activeTasks: ([0_0]) standbyTasks: ([]) prevActiveTasks: ([]) prevStandbyTasks: ([0_0]) changelogOffsetTotalsByTask: ([0_0=245]) taskLagTotals: ([0_0=1]) clientTags: ([]) capacity: 1 assigned: 1]} with no followup probing rebalance.
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Assigned 1 total tasks including 1 stateful tasks to 1 client nodes.
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Assignment of tasks to nodes: 82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7=[activeTasks: ([0_0]) standbyTasks: ([])]
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Client 82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7 per-consumer assignment:
+	prev owned active {}
+	prev owned standby {rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-a5b54e8b-c9f9-4f44-9b49-30793f697907=[0_0]}
+	assigned active {rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-a5b54e8b-c9f9-4f44-9b49-30793f697907=[0_0]}
+	revoking active {}
+	assigned standby {}
+
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] Finished stable assignment of tasks, no followup rebalances required.
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Finished assignment for group at generation 9: {rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-a5b54e8b-c9f9-4f44-9b49-30793f697907=Assignment(partitions=[input-streamID_005-0], userDataSize=52)}
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Successfully synced group in generation Generation{generationId=9, memberId='rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer-a5b54e8b-c9f9-4f44-9b49-30793f697907', protocol='stream'}
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Updating assignment with
+	Assigned partitions:                       [input-streamID_005-0]
+	Current owned partitions:                  []
+	Added partitions (assigned - owned):       [input-streamID_005-0]
+	Revoked partitions (owned - assigned):     []
+
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Notifying assignor about the new Assignment(partitions=[input-streamID_005-0], userDataSize=52)
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer] No followup rebalance was requested, resetting the rebalance schedule.
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.TaskManager - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Handle new assignment with:
+	New active tasks: [0_0]
+	New standby tasks: []
+	Existing active tasks: []
+	Existing standby tasks: []
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Adding newly assigned partitions: input-streamID_005-0
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] State transition from STARTING to PARTITIONS_ASSIGNED
+2024-10-08 23:14:29 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition input-streamID_005-0 to the committed offset FetchPosition{offset=51, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.1.3:9092 (id: 0 rack: null)], epoch=0}}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.ProcessorStateManager - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] stream-task [0_0] State store data-store initialized from checkpoint with offset 245 at changelog rts-stream-processor-topology-data-store-changelog-0
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] task [0_0] Initialized
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StoreChangelogReader - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] End offset for changelog rts-stream-processor-topology-data-store-changelog-0 initialized as 246.
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer, groupId=null] Assigned to partition(s): rts-stream-processor-topology-data-store-changelog-0
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer, groupId=null] Seeking to offset 246 for partition rts-stream-processor-topology-data-store-changelog-0
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer, groupId=null] Cluster ID: wZiqM8mHTE2wey8CnwC7VQ
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.StoreChangelogReader - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Finished restoring changelog rts-stream-processor-topology-data-store-changelog-0 to store data-store with a total number of 0 records
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] task [0_0] Restored and ready to run
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Restoration took 621 ms for all active tasks [0_0]
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] State transition from REBALANCING to RUNNING
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer, groupId=rts-stream-processor-topology] Requesting the log end offset for input-streamID_005-0 in order to compute lag
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan0"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan1"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan0"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan0"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan0"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan7"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan0"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan5"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan4"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan0"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan7"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan0"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan3"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan6"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan1"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan4"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan4"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan5"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan3"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan9"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan1"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan4"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan4"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan4"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan4"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan9"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan7"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan7"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan9"]}
+2024-10-08 23:14:30 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan9"]}
+2024-10-08 23:14:32 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 26354 ms.
+2024-10-08 23:14:35 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
+2024-10-08 23:14:40 [kafka-producer-network-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25438 ms.
+2024-10-08 23:14:54 [rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-consumer, groupId=rts-stream-topology] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 30000 ms.
+2024-10-08 23:15:05 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 29694 ms.
+2024-10-08 23:15:05 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: fetchMetadata
+2024-10-08 23:15:09 [kafka-producer-network-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 27458 ms.
+2024-10-08 23:15:09 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:15:09 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan9"]}
+2024-10-08 23:15:09 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan2"]}
+2024-10-08 23:15:09 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan8"]}
+2024-10-08 23:15:09 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.e.processors.ExtractEventProcessor - Processing event: {"streamId":"StreamID-12","events":["Dhruvan5"]}
+2024-10-08 23:15:23 [rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-consumer, groupId=rts-stream-topology] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 27448 ms.
+2024-10-08 23:15:33 [Thread-0] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] State transition from RUNNING to PENDING_SHUTDOWN
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Informed to shut down
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] State transition from RUNNING to PENDING_SHUTDOWN
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Shutting down 1 stream threads
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Shutting down clean
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] task [0_0] Suspended from RUNNING
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.i.RecordCollectorImpl - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] stream-task [0_0] Closing record collector clean
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] task [0_0] Closed clean
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-producer unregistered
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.TaskManager - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Shutdown complete
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-consumer unregistered
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer, groupId=null] Node 0 sent an invalid full fetch response with extraIds=(1M-LsFUoTtKparsMuRxECg), response=()
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1-restore-consumer unregistered
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] State transition from PENDING_SHUTDOWN to DEAD
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-StreamThread-1] Shutdown complete
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Shutdown 1 stream threads complete
+2024-10-08 23:15:33 [kafka-admin-client-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin unregistered
+2024-10-08 23:15:33 [kafka-admin-client-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:15:33 [kafka-admin-client-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:15:33 [kafka-admin-client-thread | rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-admin] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-10-08 23:15:33 [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7-CloseThread] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] State transition from PENDING_SHUTDOWN to NOT_RUNNING
+2024-10-08 23:15:33 [Thread-0] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [rts-stream-processor-topology-82a3fe15-9a40-4c59-a8fd-de8a0e1b06c7] Streams client stopped completely
+2024-10-08 23:15:35 [kafka-admin-client-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] INFO  o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-admin] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
+2024-10-08 23:15:36 [kafka-producer-network-thread | rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=rts-stream-topology-e8909c50-652e-44c0-8e2b-25343312a6e4-StreamThread-1-producer] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 26110 ms.
