@@ -18,6 +18,7 @@ public class JsonDataUtils {
 
         RTSData data = new RTSData();
         data.setEventData(event.getEvents());   // Event data
+        data.setFlag(event.isFlag());
         return KeyValue.pair(streamId, data);
     }
 

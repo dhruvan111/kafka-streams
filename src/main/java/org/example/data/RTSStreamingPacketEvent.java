@@ -11,4 +11,5 @@ import java.util.List;
 public class RTSStreamingPacketEvent {
     private String streamId;
     private List<String> events = new ArrayList<>();
+    private boolean flag;
 }

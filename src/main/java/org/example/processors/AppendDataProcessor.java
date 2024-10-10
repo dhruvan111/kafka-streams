@@ -32,8 +32,12 @@ public class AppendDataProcessor implements Processor<String, RTSData, String, R
         }
 
         RTSData updatedRTSData = dataStore.get(streamId);
-        if (updatedRTSData.getEventData().size() >= threshold) {
-            Record<String, RTSData> currentRecord = new Record<>(streamId, dataStore.get(streamId), record.timestamp(), record.headers());
+        if (record.value().isFlag()) {
+            updatedRTSData.setFlag(true);
+        }
+
+        if (updatedRTSData.getEventData().size() >= threshold || updatedRTSData.isFlag()) {
+            Record<String, RTSData> currentRecord = new Record<>(streamId, updatedRTSData, record.timestamp(), record.headers());
             context.forward(currentRecord);
         }
     }

@@ -10,6 +10,7 @@ import java.util.List;
 @Setter
 public class RTSData {
     private List<String> eventData = new ArrayList<>();
+    private boolean flag;
 
     public void combineEventData(RTSData rtsData) {
         this.eventData.addAll(rtsData.getEventData());
